@@ -1,0 +1,351 @@
+{
+  "$schema": "https://pbiadx.powerbi.com/static/d/schema/60/dashboard.json",
+  "id": "71b760df-9744-4ed5-ab16-e17430ed1507",
+  "eTag": "\"21e051327d48455d9c63e300ad6c50a7\"",
+  "title": "RTA Dashboard",
+  "schema_version": "60",
+  "autoRefresh": {
+    "enabled": true,
+    "minInterval": "1s"
+  },
+  "tiles": [
+    {
+      "id": "5122c5d5-5a6e-4f28-8bbc-a0fb3cbd65c6",
+      "title": "Number of trips by duration",
+      "visualType": "scatter",
+      "pageId": "50f71ff2-3fc2-4fe4-8787-ac85b0243986",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "3718f109-4d5b-49da-83c2-a7b5adf4309d"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [
+              
+            ],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": [
+              
+            ]
+          },
+          "additional": [
+            
+          ],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": "TripDurationMinutes",
+        "yColumns": [
+          "TripsCount"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          
+        ],
+        "drillthrough": [
+          
+        ],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "1e4c7302-ef8f-4ce6-99e6-4a144a7a7bcb",
+      "title": "Number of trips per distance",
+      "visualType": "column",
+      "pageId": "50f71ff2-3fc2-4fe4-8787-ac85b0243986",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "532e4ffc-8bc1-450b-a9d5-86dcce182aa5"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [
+              
+            ],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": [
+              
+            ]
+          },
+          "additional": [
+            
+          ],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          
+        ],
+        "drillthrough": [
+          
+        ]
+      }
+    },
+    {
+      "id": "1847dcc1-5ec4-43ae-ac44-6a45af3fd271",
+      "title": "Taxi pickups per hour",
+      "visualType": "column",
+      "pageId": "50f71ff2-3fc2-4fe4-8787-ac85b0243986",
+      "layout": {
+        "x": 0,
+        "y": 7,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "c151b423-692f-425d-b68a-33830e9350aa"
+      },
+      "visualOptions": {
+        "multipleYAxes": {
+          "base": {
+            "id": "-1",
+            "label": "",
+            "columns": [
+              
+            ],
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "yAxisScale": "linear",
+            "horizontalLines": [
+              
+            ]
+          },
+          "additional": [
+            
+          ],
+          "showMultiplePanels": false
+        },
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xColumn": "Hour",
+        "yColumns": [
+          "PickupCount"
+        ],
+        "seriesColumns": null,
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [
+          
+        ],
+        "drillthrough": [
+          
+        ]
+      }
+    },
+    {
+      "id": "5574730e-1471-417d-81fd-13286b77696c",
+      "title": "Trips by tip amount",
+      "visualType": "pie",
+      "pageId": "50f71ff2-3fc2-4fe4-8787-ac85b0243986",
+      "layout": {
+        "x": 9,
+        "y": 7,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "8b1e4d1c-d8f0-4406-b032-bd2a3f9c9c12"
+      },
+      "visualOptions": {
+        "hideLegend": true,
+        "legendLocation": "left",
+        "xColumn": null,
+        "yColumns": null,
+        "seriesColumns": null,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "labelDisabled": false,
+        "pie__label": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "tooltipDisabled": false,
+        "pie__tooltip": [
+          "name",
+          "percentage",
+          "value"
+        ],
+        "pie__orderBy": "size",
+        "pie__kind": "pie",
+        "pie__topNSlices": null,
+        "crossFilter": [
+          
+        ],
+        "drillthrough": [
+          
+        ]
+      }
+    },
+    {
+      "id": "37b9218d-e351-4724-8f46-42f4efc165fc",
+      "title": "Count",
+      "visualType": "card",
+      "pageId": "50f71ff2-3fc2-4fe4-8787-ac85b0243986",
+      "layout": {
+        "x": 18,
+        "y": 0,
+        "width": 6,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "bfdcdf1d-9f15-4aa1-9a19-62a54b3da7c3"
+      },
+      "visualOptions": {
+        "multiStat__textSize": "auto",
+        "multiStat__valueColumn": null,
+        "colorRulesDisabled": false,
+        "colorStyle": "light",
+        "colorRules": [
+          
+        ]
+      }
+    }
+  ],
+  "baseQueries": [
+    
+  ],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "3c5c6c4f-091b-4005-a394-6f34d875d2e9",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "8676060e-5244-4be5-a05d-230d63a37c41",
+      "kind": "kusto-trident",
+      "scopeId": "kusto-trident",
+      "clusterUri": "https://trd-9aeseprhe7wdqs7cu6.z2.kusto.fabric.microsoft.com",
+      "database": "5a63521a-871a-42d1-80d5-1b64900b6356",
+      "name": "KQLDB",
+      "workspace": "894a4f53-74fb-4530-99c6-0a6285e58e07"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "50f71ff2-3fc2-4fe4-8787-ac85b0243986"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "8676060e-5244-4be5-a05d-230d63a37c41"
+      },
+      "text": "// taxi trip per duration\nNYCTaxi\n| extend ingestion_datetime = ingestion_time()\n| where ingestion_datetime between (_startTime.._endTime)\n| extend dropoff_ts = todatetime(tpep_dropoff_datetime), pickup_ts = todatetime(tpep_pickup_datetime)\n| extend TripDurationMinutes = datetime_diff('minute', dropoff_ts, pickup_ts)\n| project tpep_pickup_datetime, tpep_dropoff_datetime, TripDurationMinutes\n| summarize TripsCount = count() by TripDurationMinutes\n| where TripsCount >1\n| order by TripsCount desc\n\n",
+      "id": "3718f109-4d5b-49da-83c2-a7b5adf4309d",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "8676060e-5244-4be5-a05d-230d63a37c41"
+      },
+      "text": "//taxi trips per distance\nNYCTaxi\n| extend ingestion_datetime = ingestion_time()\n| where ingestion_datetime between (_startTime.._endTime)\n| summarize TripsCount = count() by RoundedDistance = round(todouble(trip_distance), 0)\n| order by RoundedDistance asc",
+      "id": "532e4ffc-8bc1-450b-a9d5-86dcce182aa5",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "8676060e-5244-4be5-a05d-230d63a37c41"
+      },
+      "text": "//taxi pickups per hour\nNYCTaxi\n| extend ingestion_datetime = ingestion_time()\n| where ingestion_datetime between (_startTime.._endTime)\n| extend pu_datetime =  todatetime(tpep_pickup_datetime)\n| summarize PickupCount = count() by bin(pu_datetime, 1h)\n| extend Date = format_datetime(pu_datetime, 'yyyy-MM-dd'), Hour = format_datetime(pu_datetime, 'HH')\n| project Hour, PickupCount\n| order by Hour asc",
+      "id": "c151b423-692f-425d-b68a-33830e9350aa",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "8676060e-5244-4be5-a05d-230d63a37c41"
+      },
+      "text": "//taxi trips by tip amount\nNYCTaxi\n| extend ingestion_datetime = ingestion_time()\n| where ingestion_datetime between (_startTime.._endTime)\n| extend tip =  round(toreal(tip_amount))\n| summarize tripCount = count() by tostring(tip)\n| order by tripCount desc\n\n\n",
+      "id": "8b1e4d1c-d8f0-4406-b032-bd2a3f9c9c12",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "8676060e-5244-4be5-a05d-230d63a37c41"
+      },
+      "text": "NYCTaxi\n| extend ingestion_datetime = ingestion_time()\n| where ingestion_datetime between (_startTime.._endTime)\n| count",
+      "id": "bfdcdf1d-9f15-4aa1-9a19-62a54b3da7c3",
+      "usedVariables": [
+        "_endTime",
+        "_startTime"
+      ]
+    }
+  ]
+}

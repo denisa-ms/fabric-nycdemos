@@ -1,0 +1,5 @@
+python-dotenv
+azure.identity
+semantic-link-sempy
+azure-storage-blob
+azure-storage-file-datalake

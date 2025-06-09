@@ -1,0 +1,46 @@
+//Scatter chart
+// taxi trip per duration
+NYCTaxi
+| extend ingestion_datetime = ingestion_time()
+| where ingestion_datetime between (_startTime.._endTime)
+| extend dropoff_ts = todatetime(tpep_dropoff_datetime), pickup_ts = todatetime(tpep_pickup_datetime)
+| extend TripDurationMinutes = datetime_diff('minute', dropoff_ts, pickup_ts)
+| project tpep_pickup_datetime, tpep_dropoff_datetime, TripDurationMinutes
+| summarize TripsCount = count() by TripDurationMinutes
+| where TripsCount >1
+| order by TripsCount desc
+
+
+//column chart
+//taxi trips per distance
+NYCTaxi
+| extend ingestion_datetime = ingestion_time()
+| where ingestion_datetime between (_startTime.._endTime)
+| summarize TripsCount = count() by RoundedDistance = round(todouble(trip_distance), 0)
+| order by RoundedDistance asc
+
+//taxi pickups per hour
+//column chart
+NYCTaxi
+| extend ingestion_datetime = ingestion_time()
+| where ingestion_datetime between (_startTime.._endTime)
+| extend pu_datetime =  todatetime(tpep_pickup_datetime)
+| summarize PickupCount = count() by bin(pu_datetime, 1h)
+| extend Date = format_datetime(pu_datetime, 'yyyy-MM-dd'), Hour = format_datetime(pu_datetime, 'HH')
+| project Hour, PickupCount
+| order by Hour asc
+
+//taxi trips by tip amount
+//Pie chart
+NYCTaxi
+| extend ingestion_datetime = ingestion_time()
+| where ingestion_datetime between (_startTime.._endTime)
+| extend tip =  round(toreal(tip_amount))
+| summarize tripCount = count() by tostring(tip)
+| order by tripCount desc
+
+//Stat
+NYCTaxi
+| extend ingestion_datetime = ingestion_time()
+| where ingestion_datetime between (_startTime.._endTime)
+| count
