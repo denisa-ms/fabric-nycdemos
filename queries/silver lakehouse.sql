@@ -1,16 +1,4 @@
-## Data Schema
-![Architecture](./data/schema.png)
-
-
-
-## Architecture
-![Architecture](./data/architecture.png)
-
-
-## Queries
-
-```sql
--- Get taxi data and join with shortcuts from SQL and storage account
+-- get taxi data and join with shortcuts from SQL and storage account
 SELECT TOP 100 *
 FROM 
     [silver_lakehouse].[dbo].[green_tripdata_2017] AS gtd
@@ -20,9 +8,8 @@ INNER JOIN
 INNER JOIN 
     [silver_lakehouse].[dbo].[locations] AS loc
     ON gtd.[PULocationID] = loc.[LocationID]
-```
 
-```sql
+
 -- Find the most popular destination
 SELECT 
 	gt.[passenger_count],
@@ -30,10 +17,9 @@ SELECT
 FROM [silver_lakehouse].[dbo].[green_tripdata_2017] as gt
 GROUP BY [gt].[passenger_count] 
 ORDER BY NrOfTripswithPassengersNr DESC; 
-```
 
-```sql
--- Get streaming taxi data and join with shortcuts from SQL and storage account
+
+-- get streaming taxi data and join with shortcuts from SQL and storage account
 SELECT TOP 100 *
 FROM 
     [silver_lakehouse].[dbo].[green_taxi_streaming] AS gtd
@@ -43,4 +29,3 @@ INNER JOIN
 INNER JOIN 
     [silver_lakehouse].[dbo].[locations] AS loc
     ON gtd.[PULocationID] = loc.[LocationID]
-```
